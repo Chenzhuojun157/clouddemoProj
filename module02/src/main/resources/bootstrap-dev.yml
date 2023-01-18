@@ -1,0 +1,6 @@
+nacos:
+  server-addr: 127.0.0.1:8848
+  username: "czj"
+  password: "000000"
+  namespace: d85f93eb-42d9-4894-b2b4-bbc45ddbce80
+  group: DEFAULT_GROUP

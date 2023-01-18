@@ -1,0 +1,35 @@
+server:
+  port: 8003
+spring:
+  profiles:
+    active: dev
+  application:
+    name: module01
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        # 权限认证 nacos.core.auth.enabled=true 时需要添加
+        username: ${nacos.username}
+        password: ${nacos.password}
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+        register-enabled: true
+      config:
+        # 权限认证 nacos.core.auth.enabled=true 时需要添加
+        username: ${nacos.username}
+        password: ${nacos.password}
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: module01-config.yaml
+            group: ${nacos.group}
+            refresh: true
+          - data-id: common-mysql.yaml
+            group: ${nacos.group}
+            refresh: true
